@@ -1,0 +1,52 @@
+<p>member works!</p>
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>cin</th>
+    <th>Name</th>
+    <th>type</th>
+    <th>createdDate</th>
+  </tr>
+  <tr *ngFor="let member of datasource">
+    <td>{{member.id}}</td>
+    <td>{{member.cin}}</td>
+    <td>{{member.nom}}</td>
+    <td>{{member.type}}</td>
+    <td>{{member.createdDate}}</td>
+  </tr>
+</table>
+<table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="1">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+ <!--  CIN Column -->
+  <ng-container matColumnDef="2">
+    <th mat-header-cell *matHeaderCellDef> cin </th>
+    <td mat-cell *matCellDef="let element"> {{element.cin}} </td>
+  </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="3">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- type Column -->
+  <ng-container matColumnDef="4">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="5">
+    <th mat-header-cell *matHeaderCellDef> created date </th>
+    <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
