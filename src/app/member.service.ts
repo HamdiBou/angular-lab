@@ -16,4 +16,16 @@ export class MemberService {
   GetAllMembers():Observable<Membre[]>{//Observable is a class that represents a stream of data
     return this.http.get<Membre[]>('http://localhost:3000/members');
   }
+  //add a member to the server with a post request
+  addMember(member:Membre):Observable<Membre>{
+    return this.http.post<Membre>('http://localhost:3000/members',member);
+    }
+  //delete a member from the server with a delete request
+  deleteMember(id:number):Observable<Membre>{
+    return this.http.delete<Membre>(`http://localhost:3000/members/${id}`);
+  }
+  //update a member from the server with a put request
+  updateMember(id:number,member:Membre):Observable<Membre>{
+    return this.http.put<Membre>(`http://localhost:3000/members/${id}`,member);
+  }
 }

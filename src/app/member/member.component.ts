@@ -23,4 +23,20 @@ export class MemberComponent implements OnInit {
       this.datasource = data;
     });
   }
+deleteMember(id: number) {
+  this.MS.deleteMember(id).subscribe(() => {
+    console.log(`Member with ID ${id} deleted`);
+    this.MS.GetAllMembers().subscribe((data) => {
+      this.datasource = data;
+    });
+  });
+}
+editMember(id: number, member: Membre) {
+  this.MS.updateMember(id, member).subscribe(() => {
+    console.log(`Member with ID ${id} updated`);
+    this.MS.GetAllMembers().subscribe((data) => {
+      this.datasource = data;
+    });
+  });
+  }
 }
