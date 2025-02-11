@@ -1,29 +1,25 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <p>
-  <mat-form-field appearance="fill">
-    <mat-label></mat-label>
-    <input matInput placeholder="Placeholder">
+  <mat-form-field appearance="outline">
+    <input matInput formControlName="cin" placeholder="cin">
   </mat-form-field>
 </p>
 <p>
   <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
+    <input matInput formControlName="name" placeholder="name">
   </mat-form-field>
 </p>
 <p>
   <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
+    <input matInput formControlName="type" placeholder="type">
   </mat-form-field>
 </p>
 <p>
   <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
+    <input matInput formControlName="createdDate" placeholder="createdDate">
   </mat-form-field>
 </p>
 <p>
-  <input type="submit" value="Submit">
+  <input routerLink="/create"  type="submit" value="Submit" >
 </p>
 </form>

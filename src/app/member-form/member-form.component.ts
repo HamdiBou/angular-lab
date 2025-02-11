@@ -20,4 +20,7 @@ ngOnInit(): void {
     createdDate: new FormControl(null, Validators.required),
   });
 }
+onSubmit(){
+  console.log(this.form.value);
+  }
 }
