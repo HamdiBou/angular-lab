@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "json-server": "json-server --watch src/assets/db.json --port 3000"
   },
   "private": true,
   "dependencies": {
@@ -15,6 +16,7 @@
     "@angular/common": "^16.1.0",
     "@angular/compiler": "^16.1.0",
     "@angular/core": "^16.1.0",
+    "@angular/flex-layout": "^9.0.0-beta.31",
     "@angular/forms": "^16.1.0",
     "@angular/material": "^16.2.14",
     "@angular/platform-browser": "^16.1.0",

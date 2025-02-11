@@ -1,0 +1,25 @@
+{
+  "members": [
+    {
+      "id": "1234",
+      "cin": "12345678",
+      "nom": "nom1",
+      "type": "type1",
+      "createdDate": "2020-01-01"
+    },
+    {
+      "id": "1235",
+      "cin": "12345679",
+      "nom": "nom2",
+      "type": "type2",
+      "createdDate": "2020-01-02"
+    },
+    {
+      "id": "1236",
+      "cin": "12345680",
+      "nom": "nom3",
+      "type": "type3",
+      "createdDate": "2020-01-03"
+    }
+  ]
+}
