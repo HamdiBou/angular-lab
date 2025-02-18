@@ -1,0 +1,17 @@
+#confirm
+{
+  background-color: red;
+  color: white;
+  padding: 1px 2px;
+  margin: 8px 0;
+  position: relative;
+  left:60%;
+}
+#cancel
+{
+  background-color: blue;
+  color: white;
+  padding: 1px 2px;
+  margin: 8px 0;
+  position: inherit;
+}

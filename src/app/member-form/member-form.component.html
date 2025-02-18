@@ -6,6 +6,11 @@
 </p>
 <p>
   <mat-form-field appearance="outline">
+    <input matInput formControlName="cin" placeholder="cin">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
     <input matInput formControlName="nom" placeholder="name">
   </mat-form-field>
 </p>
@@ -20,6 +25,7 @@
   </mat-form-field>
 </p>
 <p>
-  <input routerLink="/create" type="submit" value="Submit">
+  <button id="submit" type="submit">Submit</button>
+  <button id="cancel" routerLink="/">Cancel</button>
 </p>
 </form>

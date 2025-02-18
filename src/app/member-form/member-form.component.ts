@@ -12,8 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class MemberFormComponent implements OnInit
 {
   constructor(private MS:MemberService, private router:Router, private activatedRoute:ActivatedRoute) { }
-form !: FormGroup;
-idCourant!:string;
+  form !: FormGroup;
+  idCourant!:string;
 //
 
 ngOnInit(): void {
@@ -21,19 +21,37 @@ ngOnInit(): void {
   //Add 'implements OnInit' to the class.
   //if the route is /create then the form is empty else the form is filled with the data of the member
   this.idCourant=this.activatedRoute.snapshot.params['id'];
-  console.log(this.idCourant);
-  this.form = new FormGroup({
-    cin : new FormControl(null, Validators.required),
-    nom : new FormControl(null, Validators.required),
-    type : new FormControl(null, Validators.required),
-    createdDate: new FormControl(null, Validators.required),
-  });
-}
-onSubmit(){
-  console.log(this.form.value);
-  this.MS.addMember(this.form.value).subscribe((data)=>{
-    console.log(data);
-    this.router.navigate(['/']);
+  //console.log(this.idCourant);
+  if(this.idCourant){
+    this.MS.getMemberById(this.idCourant).subscribe((data)=>{
+      this.form = new FormGroup({
+        cin : new FormControl(data.cin, Validators.required),
+        nom : new FormControl(data.nom, Validators.required),
+        type : new FormControl(data.type, Validators.required),
+        createdDate: new FormControl(data.createdDate, Validators.required),
+      });
     });
   }
+  else{
+    this.form = new FormGroup({
+      cin : new FormControl(null, Validators.required),
+      nom : new FormControl(null, Validators.required),
+      type : new FormControl(null, Validators.required),
+      createdDate: new FormControl(null, Validators.required),
+    });
+  }
+}
+onSubmit(){
+  if(this.idCourant){
+    this.MS.updateMember(this.idCourant,this.form.value).subscribe((data)=>{
+      console.log(data);
+      this.router.navigate(['/']);
+    });
+  } else {
+    this.MS.addMember(this.form.value).subscribe((data)=>{
+      console.log(data);
+      this.router.navigate(['/']);
+    });
+  }
+}
 }
