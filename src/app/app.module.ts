@@ -24,6 +24,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ToolsComponent } from './tools/tools.component';
 import { EventsComponent } from './events/events.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { ModalEventsComponent } from './modal-events/modal-events.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,8 +36,9 @@ import { ArticlesComponent } from './articles/articles.component';
     TemplateComponent,
     DashboardComponent,
     ToolsComponent,
+    ArticlesComponent,
     EventsComponent,
-    ArticlesComponent
+    ModalEventsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,9 @@ import { ArticlesComponent } from './articles/articles.component';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

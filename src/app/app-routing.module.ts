@@ -39,7 +39,10 @@ const routes: Routes = [
     pathMatch: 'full',
     component: EventsComponent,
   },
-  { path: 'articles', pathMatch: 'full', component: ArticlesComponent },
+  { path: 'articles',
+    pathMatch: 'full',
+    component: ArticlesComponent
+  },
   {
     path: '**',
     component: MemberComponent,
