@@ -5,17 +5,23 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Date Debut</mat-label>
-    <input
-      matInput
-      placeholder="Enter Start Date"
-      formControlName="dateDebut"
-    />
+    <mat-label>Start Date</mat-label>
+    <input matInput
+           [matDatepicker]="pickerStart"
+           formControlName="dateDebut"
+           placeholder="Start date">
+    <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+    <mat-datepicker #pickerStart></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Date Fin</mat-label>
-    <input matInput placeholder="Enter End Date" formControlName="dateFin" />
+    <mat-label>End Date</mat-label>
+    <input matInput
+           [matDatepicker]="pickerEnd"
+           formControlName="dateFin"
+           placeholder="End date">
+    <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+    <mat-datepicker #pickerEnd></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>

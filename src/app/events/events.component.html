@@ -30,6 +30,11 @@
       <td mat-cell *matCellDef="let row">{{ row.dateFin }}</td>
     </ng-container>
 
+    <ng-container matColumnDef="place">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Place</th>
+      <td mat-cell *matCellDef="let row">{{ row.place }}</td>
+    </ng-container>
+
 
     <!-- Actions Column -->
     <ng-container matColumnDef="actions">

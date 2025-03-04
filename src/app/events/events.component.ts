@@ -8,12 +8,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ModalEventsComponent } from '../modal-events/modal-events.component';
 import { ConfirmDialogEventComponent } from '../confirm-dialog-event/confirm-dialog-event.component';
-import {NgIf, JsonPipe} from '@angular/common';
-
-import { FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatNativeDateModule} from '@angular/material/core';
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -31,7 +25,7 @@ export class EventsComponent implements OnInit, AfterViewInit {
   ];
 
   dataSource: MatTableDataSource<Evt>;
-  range!: FormGroup;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
