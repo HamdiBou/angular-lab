@@ -27,6 +27,8 @@ import { ArticlesComponent } from './articles/articles.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ModalEventsComponent } from './modal-events/modal-events.component';
+import { ConfirmDialogEventComponent } from './confirm-dialog-event/confirm-dialog-event.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { ModalEventsComponent } from './modal-events/modal-events.component';
     ToolsComponent,
     ArticlesComponent,
     EventsComponent,
-    ModalEventsComponent
+    ModalEventsComponent,
+    ConfirmDialogEventComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import { ModalEventsComponent } from './modal-events/modal-events.component';
     MatListModule,
     MatMenuModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

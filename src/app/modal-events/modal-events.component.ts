@@ -1,6 +1,7 @@
-import { MatDialogRef } from '@angular/material/dialog';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-events',
@@ -8,23 +9,42 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./modal-events.component.css']
 })
 export class ModalEventsComponent implements OnInit {
-  form!:FormGroup;
-  constructor(private dialogRef:MatDialogRef<ModalEventsComponent> ) { }
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.form = new FormGroup({
-      title: new FormControl('', Validators.required),
-      dateDebut: new FormControl('', Validators.required),
-      dateFin: new FormControl('', Validators.required),
-      place: new FormControl('', Validators.required)
-    });
+  idCourant!:number;
+  form: FormGroup;
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<ModalEventsComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+  ) {
+    //// condition when its an update or create
+    console.log(data);
+    if(data){
+      this.form = this.fb.group({
+        title: [data.title, Validators.required],
+        dateDebut: [data.dateDebut, Validators.required],
+        dateFin: [data.dateFin, Validators.required],
+        place: [data.place, Validators.required]
+      });
+    }
+    else{
+      this.form = this.fb.group({
+        title: ['', Validators.required],
+        dateDebut: ['', Validators.required],
+        dateFin: ['', Validators.required],
+        place: ['', Validators.required]
+      });
+    }
   }
-  save() {
-    this.dialogRef.close(this.form.value);
-}
-close() {
+
+  ngOnInit(): void {}
+
+  close(): void {
     this.dialogRef.close();
-}
+  }
+
+  save(): void {
+    if (this.form.valid) {
+      this.dialogRef.close(this.form.value);
+    }
+  }
 }
