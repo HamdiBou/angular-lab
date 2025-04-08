@@ -30,6 +30,9 @@ import { ModalEventsComponent } from './modal-events/modal-events.component';
 import { ConfirmDialogEventComponent } from './confirm-dialog-event/confirm-dialog-event.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { PubVisibilityComponent } from './pub-visibility/pub-visibility.component';
+import { SelectedMemberComponent } from './selected-member/selected-member.component';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     ArticlesComponent,
     EventsComponent,
     ModalEventsComponent,
-    ConfirmDialogEventComponent
+    ConfirmDialogEventComponent,
+    PubVisibilityComponent,
+    SelectedMemberComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatPaginatorModule,
     MatSortModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -65,5 +65,15 @@
       "dateFin": "03/12/2025",
       "place": "15365"
     }
+  ],
+  "pub":[
+    {
+      "id": 1,
+      "title": "conf",
+      "type": "edge computing",
+      "lien": "href",
+      "datePub": "2023-01-01",
+      "sourcePdf": "example.pdf"
+    }
   ]
 }
