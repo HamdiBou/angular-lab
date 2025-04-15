@@ -1,1 +1,32 @@
-<p>dashboard works!</p>
+<mat-card>
+  <div class="stat-container">
+    <mat-card-title>Members</mat-card-title>
+    <mat-card-content>{{ NbMembers }}</mat-card-content>
+  </div>
+  <div class="stat-container">
+    <mat-card-title>Articles</mat-card-title>
+    <mat-card-content>{{ NbArticles }}</mat-card-content>
+  </div>
+  <div class="stat-container">
+    <mat-card-title>Events</mat-card-title>
+    <mat-card-content>{{ NbEvents }}</mat-card-content>
+  </div>
+  <div class="stat-container">
+    <mat-card-title>Tools</mat-card-title>
+    <mat-card-content>{{ NbTools }}</mat-card-content>
+  </div>
+</mat-card>
+
+
+<div class="chart-wrapper" id="chart">
+  <canvas baseChart
+          [type]="'line'"
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    >
+  </canvas>
+</div>
+
+
+

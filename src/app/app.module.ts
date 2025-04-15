@@ -33,6 +33,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { PubVisibilityComponent } from './pub-visibility/pub-visibility.component';
 import { SelectedMemberComponent } from './selected-member/selected-member.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import { NgChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +72,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatSortModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
